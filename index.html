@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row-1">
+        <h1>Advanced To Do List</h1>
+        <button>ToggleTheme</button>
+      </div>
+      <form id="form" class="row-2">
+        <input
+          name="title"
+          class="input"
+          type="text"
+          placeholder="Enter task ..."
+          id="taskTitle"
+          required
+        />
+        <input class="input" type="date" required name="date" />
+        <select name="periority" id="periority" class="input">
+          <option value="low">low</option>
+          <option value="medium">medium</option>
+          <option value="high">high</option>
+        </select>
+        <textarea
+          name="note"
+          class="input"
+          placeholder="type notes..."
+        ></textarea>
+        <button type="submit" class="btn-add">Add Task</button>
+      </form>
+      <div class="row-3">search task</div>
+    </div>
+    <!--show task container-->
+    <div id="showtask" class="showtask">
+      <!---task row-->
+      <div id="taskrow" class="task-row">
+        <p id="taskEl"></p>
+        <span id="data"></span>
+      </div>
+    </div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
