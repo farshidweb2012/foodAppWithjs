@@ -52,6 +52,11 @@
   align-items: center;
   padding: 1em;
 }
+.completed{
+    background-color: #a3e49a;
+    text-decoration:line-through;
+    border-color: solid red 2px;
+}
 .input {
   display: inline-block;
   height: 3.5rem;
