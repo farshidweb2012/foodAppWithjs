@@ -3,8 +3,9 @@ const showtask = document.getElementById("showtask");
 const form = document.getElementById("form");
 const taskTitleEl = document.getElementById("taskTitle");
 const dateEl = document.getElementById("date");
+const searchTask = document.getElementById("searchInput");
+
 const textNotes = document.getElementById("Notes");
-const search = document.getElementById("searchInput");
 
 let data = [];
 
@@ -30,11 +31,13 @@ form.addEventListener("submit", (e) => {
   showDataInbox();
   clearForm();
 });
+
 function clearForm() {
   taskTitleEl.value = "";
   dateEl.value = "";
   textNotes.value = "";
 }
+///////////////////////////////////////////render data in dom 
 function showDataInbox() {
   showtask.innerHTML = "";
   const el = data.map((task, index) => {
@@ -71,15 +74,50 @@ function showDataInbox() {
   });
   return el;
 }
+//////////////////////////////////////////////////////////////////////start  apply filter
+searchTask.addEventListener("input", applyFilter);
+//apply filter 
+function applyFilter() {
+  const searchTerm = searchTask.value.toLowerCase();
+  const filteredTask = data.filter((task) => {
+    const matchesSearch = task.title.toLowerCase().includes(searchTerm);
 
-search.addEventListener("input", applyFilter);
-
-function applyFilter(e) {
-  const searchItem = e.target.value.toLowerCase();
-  const filteredData = data.filter((task) => {
-    const result = task.title.toLowerCase().includes(searchItem);
-    
-    return result;
+    return matchesSearch;
   });
-  console.log(filteredData)
+
+  showtask.innerHTML = "";
+  const el = filteredTask.map((task, index) => {
+    const taskRow = document.createElement("div");
+
+    taskRow.className = `task-row  ${task.perority}`;
+    taskRow.setAttribute("data-index", index);
+    if (task.Completed) {
+      taskRow.classList.add("completed");
+    }
+    taskRow.innerHTML = `<p>${task.title}  -   ${task.date}</p> 
+        <div >
+               <button  class="btn-complete">${
+                 task.Completed ? "Complete" : "UnComplete"
+               }</button>
+              <button  style="margin-left: 1rem" class="btn-del" index= ${index}  class="btn-complete">Delete</button>
+        </div>
+    `;
+
+    taskRow.querySelector(".btn-complete").addEventListener("click", () => {
+      data[index].Completed = !data[index].Completed;
+      showDataInbox();
+      console.log(data[index].Completed);
+    });
+
+    //delete element from data list
+    taskRow.querySelector(".btn-del").addEventListener("click", () => {
+      data.splice(index, 1);
+      applyFilter();
+    });
+
+    showtask.appendChild(taskRow);
+  });
+  return el;
+
+   
 }
