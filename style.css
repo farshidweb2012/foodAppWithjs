@@ -28,8 +28,9 @@
 }
 .row-3 {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  gap: 2.5rem;
 }
 .showtask {
   background-color: rgb(224, 233, 216);
@@ -52,17 +53,22 @@
   align-items: center;
   padding: 1em;
 }
-.completed{
-    background-color: #a3e49a;
-    text-decoration:line-through;
-    border-color: solid red 2px;
+.completed {
+  background-color: #a3e49a;
+  text-decoration: line-through;
+  border-color: solid red 2px;
 }
 .input {
   display: inline-block;
   height: 3.5rem;
 }
 
-
+.btn {
+  width: 5rem;
+  height: 3rem;
+  border-radius: 5px;
+  background-color: #e07358;
+}
 .btn-complete {
   background-color: #6ed860;
   width: 5rem;
@@ -85,12 +91,12 @@
   opacity: 0.8;
 }
 
-.low{
+.low {
   border-left: solid #6ed860 3px;
 }
-.medium{
-  border-left:solid  #e07358 3px;
+.medium {
+  border-left: solid #e07358 3px;
 }
-.high{
+.high {
   border-left: solid red 3px;
 }

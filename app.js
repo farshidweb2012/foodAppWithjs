@@ -2,8 +2,10 @@ const btnAdd = document.querySelector(".btn-add");
 const showtask = document.getElementById("showtask");
 const form = document.getElementById("form");
 const taskTitleEl = document.getElementById("taskTitle");
- const  dateEl=document.getElementById('date')
- const   textNotes=document.getElementById('Notes')
+const dateEl = document.getElementById("date");
+const textNotes = document.getElementById("Notes");
+const search = document.getElementById("searchInput");
+
 let data = [];
 
 form.addEventListener("submit", (e) => {
@@ -28,11 +30,11 @@ form.addEventListener("submit", (e) => {
   showDataInbox();
   clearForm();
 });
- function clearForm(){
-      taskTitleEl.value=''
-        dateEl.value=''
-        textNotes.value=''
- }
+function clearForm() {
+  taskTitleEl.value = "";
+  dateEl.value = "";
+  textNotes.value = "";
+}
 function showDataInbox() {
   showtask.innerHTML = "";
   const el = data.map((task, index) => {
@@ -68,4 +70,16 @@ function showDataInbox() {
     showtask.appendChild(taskRow);
   });
   return el;
+}
+
+search.addEventListener("input", applyFilter);
+
+function applyFilter(e) {
+  const searchItem = e.target.value.toLowerCase();
+  const filteredData = data.filter((task) => {
+    const result = task.title.toLowerCase().includes(searchItem);
+    
+    return result;
+  });
+  console.log(filteredData)
 }

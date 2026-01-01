@@ -22,21 +22,36 @@
           id="taskTitle"
           required
         />
-        <input id="date" class="input" type="date" required name="date"  />
+        <input id="date" class="input" type="date" required name="date" />
         <select name="periority" id="periority" class="input">
           <option value="low">low</option>
           <option value="medium">medium</option>
           <option value="high">high</option>
         </select>
         <textarea
-        id="Notes"
+          id="Notes"
           name="note"
           class="input"
           placeholder="type notes..."
         ></textarea>
         <button type="submit" class="btn-add">Add Task</button>
       </form>
-      <div class="row-3">search task</div>
+      <div class="row-3">
+        <input id="searchInput" class="input" placeholder="search task ..." />
+        <select class="input">
+          <option>All periority</option>
+          <option value="low">low</option>
+          <option value="medium">medium</option>
+          <option value="high">high</option>
+        </select>
+        <select class="input">
+          <option>sort byDate</option>
+          <option>low</option>
+          <option>medium</option>
+          <option>high</option>
+        </select>
+        <button class="btn" id="ExportBtn ">export as pdf</button>
+      </div>
     </div>
     <!--show task container-->
     <div id="showtask" class="showtask">
