@@ -11,7 +11,7 @@
     <div class="container">
       <div class="row-1">
         <h1>Advanced To Do List</h1>
-        <button>ToggleTheme</button>
+        <button class="btn" id="toggleTheme">ToggleTheme</button>
       </div>
       <form id="form" class="row-2">
         <input
@@ -38,19 +38,18 @@
       </form>
       <div class="row-3">
         <input id="searchInput" class="input" placeholder="search task ..." />
-        <select class="input">
-          <option>All periority</option>
+        <select id="periorityEl" class="input">
+          <option value="">All periority</option>
           <option value="low">low</option>
           <option value="medium">medium</option>
           <option value="high">high</option>
         </select>
-        <select class="input">
-          <option>sort byDate</option>
-          <option>low</option>
-          <option>medium</option>
-          <option>high</option>
+        <select id="sortByDate" class="input">
+          <option value="">Sort By Date</option>
+          <option value="asc">Ascending</option>
+          <option value="dec">Descending</option>
         </select>
-        <button class="btn" id="ExportBtn ">export as pdf</button>
+        <button class="btn" id="ExportBtn">export as pdf</button>
       </div>
     </div>
     <!--show task container-->
@@ -61,6 +60,13 @@
         <span id="data"></span>
       </div>
     </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.3/jspdf.umd.min.js"
+      integrity="sha512-+EeCylkt9WHJk5tGJxYdecHOcXFRME7qnbsfeMsdQL6NUPYm2+uGFmyleEqsmVoap/f3dN/sc3BX9t9kHXkHHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script type="module" src="./app.js"></script>
   </body>
 </html>
