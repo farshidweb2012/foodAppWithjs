@@ -1,72 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="./fontawesome-free-7.1.0-web//css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>LibraryProjectInjs</title>
   </head>
-
   <body>
-    <div class="container">
-      <div class="row-1">
-        <h1>Advanced To Do List</h1>
-        <button class="btn" id="toggleTheme">ToggleTheme</button>
+    <!--header and search food-->
+    <div class="header">
+      <div class="header-loginLink">
+        <div class="cartContainer">
+          <i
+            id="cartIcon"
+            aria-colspan="cartIcon"
+            class="fa-solid fa-shopping-cart icon fa-2x"
+          >
+          </i
+          ><span class="cartNumber">5</span>
+        </div>
+        <a href="./Signup/signup.html" class="link">ثبت نام </a>|
+        <a href="./login/login.html" class="link">ورود</a>
       </div>
-      <form id="form" class="row-2">
+      <div class="header-search">
         <input
-          name="title"
-          class="input"
           type="text"
-          placeholder="Enter task ..."
-          id="taskTitle"
-          required
+          placeholder="...جستجو کن تا زودتر پیدا کنی"
+          id="searchElemnt"
         />
-        <input id="date" class="input" type="date" required name="date" />
-        <select name="periority" id="periority" class="input">
-          <option value="low">low</option>
-          <option value="medium">medium</option>
-          <option value="high">high</option>
-        </select>
-        <textarea
-          id="Notes"
-          name="note"
-          class="input"
-          placeholder="type notes..."
-        ></textarea>
-        <button type="submit" class="btn-add">Add Task</button>
-      </form>
-      <div class="row-3">
-        <input id="searchInput" class="input" placeholder="search task ..." />
-        <select id="periorityEl" class="input">
-          <option value="">All periority</option>
-          <option value="low">low</option>
-          <option value="medium">medium</option>
-          <option value="high">high</option>
-        </select>
-        <select id="sortByDate" class="input">
-          <option value="">Sort By Date</option>
-          <option value="asc">Ascending</option>
-          <option value="dec">Descending</option>
-        </select>
-        <button class="btn" id="ExportBtn">export as pdf</button>
+        <button id="searchBtn">جستجو</button>
       </div>
-    </div>
-    <!--show task container-->
-    <div id="showtask" class="showtask">
-      <!---task row-->
-      <div id="taskrow" class="task-row">
-        <p id="taskEl"></p>
-        <span id="data"></span>
+      <div class="header-logo">
+        <img
+          id="snapfoodLogo"
+          src="./images/Snappfood-Logo-1030x1030.png"
+          alt="snapfood logo"
+        />
       </div>
     </div>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.3/jspdf.umd.min.js"
-      integrity="sha512-+EeCylkt9WHJk5tGJxYdecHOcXFRME7qnbsfeMsdQL6NUPYm2+uGFmyleEqsmVoap/f3dN/sc3BX9t9kHXkHHg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <main class="main">main</main>
     <script type="module" src="./app.js"></script>
   </body>
 </html>

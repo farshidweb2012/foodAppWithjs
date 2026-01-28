@@ -1,105 +1,58 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
+  text-align: center;
 }
 
-.container {
+html {
+  font-size: 100%;
+}
+
+.header {
   width: 100%;
-  height: 18em;
-
-  display: grid;
-  grid-template-rows: 30% 40% 30%;
-}
-
-.row-1 {
+  height: 5rem;
+  background-color: aqua;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  padding: 0.6rem;
 }
-.row-2 {
-  background-color: #ccc;
+.header-loginLink {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-}
-.row-3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2.5rem;
-}
-.showtask {
-  background-color: rgb(224, 233, 216);
-  width: 100%;
-  height: 20rem;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 1rem;
-  gap: 1rem;
-}
-.task-row {
+  width: 20rem;
   background-color: #fff;
-  width: 85%;
-  height: 3.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em;
 }
-.completed {
-  background-color: #a3e49a;
-  text-decoration: line-through;
-  border-color: solid red 2px;
+.header-search {
+  background-color: chartreuse;
 }
-.input {
-  display: inline-block;
-  height: 3.5rem;
+.header-logo {
+  background-color: rgb(218, 204, 21);
 }
 
-.btn {
-  width: 5rem;
-  height: 3rem;
-  border-radius: 5px;
-  background-color: #e07358;
-}
-.btn-complete {
-  background-color: #6ed860;
-  width: 5rem;
-  height: 3rem;
-  border-radius: 5px;
-}
-.btn-add {
-  background-color: rgb(61, 49, 231);
-  border-radius: 5px;
-  width: 8rem;
-  height: 3.5rem;
-}
-.btn-del {
-  background-color: #e07358;
-  width: 5rem;
-  height: 3rem;
-  border-radius: 5px;
-}
-.btn-add:hover {
-  opacity: 0.8;
+.cartContainer {
+  position: relative;
 }
 
-.low {
-  border-left: solid #6ed860 3px;
+.cartNumber {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: crimson;
+  padding: 0.2rem;
+  border-radius: 50%;
+  top: -0.5rem;
+  left: 2rem;
 }
-.medium {
-  border-left: solid #e07358 3px;
+
+#snapfoodLogo {
+  width: 5rem;
+  height: 5rem;
 }
-.high {
-  border-left: solid red 3px;
-}
-.dark-mode {
-  background-color: #333;
-  color: #fff;
-}
+
+a {
+  font-size: 1.2rem;
+  text-decoration: none;
+}/*# sourceMappingURL=style.css.map */
