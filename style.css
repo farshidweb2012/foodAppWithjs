@@ -11,11 +11,11 @@ html {
 .header {
   width: 100%;
   height: 5rem;
-  background-color: aqua;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.6rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .header-loginLink {
   display: flex;
@@ -27,11 +27,25 @@ html {
 }
 .header-search {
   background-color: chartreuse;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.header-logo {
-  background-color: rgb(218, 204, 21);
+.header-search-input {
+  display: inline-block;
+  height: 3rem;
+  border: none;
+  width: 20rem;
+  outline: none;
+  background-color: #eee;
 }
-
+.header-search-btn {
+  width: 5rem;
+  height: 3rem;
+  border: none;
+  background-color: #5c5aeb;
+  cursor: pointer;
+}
 .cartContainer {
   position: relative;
 }
@@ -55,4 +69,135 @@ html {
 a {
   font-size: 1.2rem;
   text-decoration: none;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  height: -moz-max-content;
+  height: max-content;
+  min-height: -moz-max-content;
+  min-height: max-content;
+  height: auto;
+}
+
+.foodContainer {
+  display: grid;
+  height: auto;
+  grid-template-rows: 20rem auto;
+}
+
+.categoryBycountry {
+  display: grid;
+  grid-template-rows: 20% 80%;
+}
+
+.filterlist {
+  position: sticky;
+  width: 100%;
+  height: 40rem;
+  background-color: burlywood;
+}
+
+.cardContainer {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 1rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+
+.card {
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 22rem;
+  gap: 0.6rem;
+  flex-direction: column;
+  padding-bottom: 0.3rem;
+}
+.card-btn {
+  height: 2rem;
+  width: 10rem;
+  background-color: #bbb;
+  border: none;
+}
+.card-btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.countrylist {
+  display: flex;
+  background-color: #fff;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+}
+
+.chooseCountry {
+  display: flex;
+  flex-direction: column;
+  padding: 0.3rem;
+  gap: 1rem;
+  border: 1px solid black;
+}
+
+.foodImage {
+  display: block;
+  width: 100%;
+  height: 72%;
+  padding-top: 0;
+  border-top: 2px solid red;
+}
+
+.countryImage {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+}
+
+.selected-country {
+  border: 4px solid red;
+}
+
+.footer {
+  width: 100%;
+  height: 3rem;
+  background-color: black;
+}
+
+.authSection {
+  display: flex;
+  width: 10rem;
+}
+
+.userInfo {
+  box-shadow: rgba(6, 24, 44, 0.3) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  z-index: 10;
+  background-color: #fff;
+  width: 7rem;
+  height: 4rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.7rem;
+  padding-right: 0.3rem;
+  position: absolute;
+}
+
+.hidden {
+  display: none;
+}
+
+.loginSignUpLink {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
 }/*# sourceMappingURL=style.css.map */

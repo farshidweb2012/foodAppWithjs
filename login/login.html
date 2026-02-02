@@ -1,11 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html dir="rtl" lang="en">
+  <head>
+    <link rel="stylesheet" href="./loginStyle.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    login page
-</body>
+  </head>
+  <body>
+    <form class="form">
+      <h2>وارد سایت شوید</h2>
+      <input
+        type="text"
+        id="username"
+        class="input"
+        placeholder="نام کاربری را وارد کنید..."
+      />
+      <input
+        type="text"
+        id="password"
+        class="input"
+        placeholder="رمز عبور را وارد کنید ..."
+      />
+      <button type="submit" class="submiteBtn">ورود به سایت</button>
+      <!-- <div class="form-details">
+        <p>حساب دارید؟</p>
+        <a href="../login/login.html">ورود</a>
+      </div> -->
+
+      <script src="./login.js"></script>
+    </form>
+  </body>
 </html>

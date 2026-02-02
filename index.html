@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <link
@@ -11,6 +11,7 @@
     <title>LibraryProjectInjs</title>
   </head>
   <body>
+    
     <!--header and search food-->
     <div class="header">
       <div class="header-loginLink">
@@ -23,16 +24,19 @@
           </i
           ><span class="cartNumber">5</span>
         </div>
-        <a href="./Signup/signup.html" class="link">ثبت نام </a>|
-        <a href="./login/login.html" class="link">ورود</a>
+        <div id="authSection" class="authSection">
+        
+           
+        </div>
       </div>
       <div class="header-search">
         <input
+          class="header-search-input"
           type="text"
           placeholder="...جستجو کن تا زودتر پیدا کنی"
           id="searchElemnt"
         />
-        <button id="searchBtn">جستجو</button>
+        <button class="header-search-btn" id="searchBtn">جستجو</button>
       </div>
       <div class="header-logo">
         <img
@@ -43,7 +47,85 @@
       </div>
     </div>
 
-    <main class="main">main</main>
+    <div class="main">
+      <div class="foodContainer">
+        <div class="categoryBycountry">
+          <h2
+            style="display: flex; justify-content: center; align-items: center"
+          >
+            جستجو برا اساس ناحیه جغرافیای
+          </h2>
+          <ul class="countrylist">
+            <li class="chooseCountry">
+              <img
+                value="All"
+                class="countryImage"
+                src="./images/CountryFlags/allCountry.jpg"
+                alt=""
+              />
+              <span>همه کشورها</span>
+            </li>
+            <li class="chooseCountry">
+              <img
+                value="Italian"
+                class="countryImage"
+                src="./images/CountryFlags/italia.png"
+                alt=""
+              />
+              <span>ایتالیایی</span>
+            </li>
+            <li class="chooseCountry">
+              <img
+                value="Turkish"
+                class="countryImage"
+                src="./images/CountryFlags/turkie.jpg"
+                alt=""
+              />
+              <span>ترکی</span>
+            </li>
+            <li class="chooseCountry">
+              <img
+                value="Chines"
+                class="countryImage"
+                src="./images/CountryFlags/china.png"
+                alt=""
+              />
+              <span>چینی</span>
+            </li>
+            <li class="chooseCountry">
+              <img
+                value="Spanish"
+                class="countryImage"
+                src="./images/CountryFlags/spanish.png"
+                alt=""
+              />
+              <span>اسپانیایی</span>
+            </li>
+            <li class="chooseCountry">
+              <img
+                value="Japanese"
+                class="countryImage"
+                src="./images/CountryFlags/japan.png"
+                alt=""
+              />
+              <span>ژاپنی</span>
+            </li>
+            <li class="chooseCountry">
+              <img
+                value="Canadian"
+                class="countryImage"
+                src="./images/CountryFlags/canada.png"
+                alt=""
+              />
+              <span>کانادایی</span>
+            </li>
+          </ul>
+        </div>
+        <div id="cardContainer" class="cardContainer"></div>
+      </div>
+      <div class="filterlist">filter</div>
+    </div>
+    <footer class="footer">footer</footer>
     <script type="module" src="./app.js"></script>
   </body>
 </html>
