@@ -1,6 +1,7 @@
 var foodList = [];
 let Foodlist;
 const cardContainer = document.getElementById("cardContainer");
+ 
 async function fetchData() {
   try {
     const response = await fetch(
@@ -43,7 +44,7 @@ function manageAtuh() {
  
     `;
   } else {
-    AuthContainer.classList.add('loginSignUpLink')
+    AuthContainer.classList.add("loginSignUpLink");
     AuthContainer.innerHTML = `
   <div class='loginSignUpLink'>  <a href="./login/login.html">ورود</a>  | <a href="./Signup/signup.html">ثبت نام</a></div>
     `;
@@ -54,7 +55,6 @@ function manageAtuh() {
     document.querySelector(".userInfo").classList.toggle("hidden");
   });
   document.getElementById("logOut").addEventListener("click", () => {
-    alert('exit')
     localStorage.removeItem("token");
     localStorage.removeItem("loggedUser");
     location.reload();
@@ -65,8 +65,9 @@ window.addEventListener("load", () => {
   fetchData();
   manageAtuh();
 });
-
+ 
 function renderDataToDom(list) {
+    console.log(list)
   list.map((food) => {
     const card = document.createElement("div");
     card.id = food.idMeal;
@@ -75,11 +76,14 @@ function renderDataToDom(list) {
          <img class='foodImage' src='${food.strMealThumb}' />
          <p>${food.strMeal}</P>
          <span>${convertNumberToPersian(food.price)}$</span>
-         <button id='btn-addCart' class='card-btn'>اضافه کردن یه سبد خرید</button>
+         <button     id=${food.idMeal} id='btn-addCart'  class='card-btn'>اضافه کردن یه سبد خرید</button>
       `;
-    cardContainer.appendChild(card);
+    cardContainer.appendChild(card)
   });
 }
+ 
+ 
+
 
 function convertNumberToPersian(number) {
   const numbers = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
