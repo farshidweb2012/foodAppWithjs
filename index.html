@@ -11,23 +11,52 @@
     <title>LibraryProjectInjs</title>
   </head>
   <body>
-    
+    <div id="modal" class="modal">
+      <div class="modal-Content">
+        <div class="modal-Hedaer">
+          <button class="modal-exitBtn">x</button>
+          <h1>سبد خرید شما</h1>
+        </div>
+        <div class="modal-ContentDetails">
+          <table>
+            <thead>
+              <tr class="tableHeader">
+                <th>مجموع</th>
+                <th>عملیات</th>
+                <th>تعداد</th>
+                <th>قیمت</th>
+                <th>نام</th>
+                <th>تصویر</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row">
+                <th>cc</th>
+                <th>dc</th>
+                <th>dd</th>
+                <th>ddd</th>
+                <th>ddd</th>
+                <th>ddd</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
     <!--header and search food-->
     <div class="header">
       <div class="header-loginLink">
-        <div  class="cartContainer">
+        <div class="cartContainer">
           <i
+            style="cursor: pointer; padding: 0.5rem"
             id="cartIcon"
             aria-colspan="cartIcon"
             class="fa-solid fa-shopping-cart icon fa-2x"
           >
           </i
-          ><span class="cartNumber">5</span>
+          ><span class="cartNumber"></span>
         </div>
-        <div id="authSection" class="authSection">
-        
-           
-        </div>
+        <div id="authSection" class="authSection"></div>
       </div>
       <div class="header-search">
         <input
@@ -45,6 +74,7 @@
           alt="snapfood logo"
         />
       </div>
+    
     </div>
 
     <div class="main">
@@ -126,6 +156,7 @@
       <div class="filterlist">filter</div>
     </div>
     <footer class="footer">footer</footer>
+
     <script type="module" src="./app.js"></script>
   </body>
 </html>
