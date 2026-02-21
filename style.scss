@@ -157,8 +157,9 @@ a {
 }
 .footer {
   width: 100%;
-  height: 3rem;
+  height: 8rem;
   background-color: black;
+  color: #fff;
 }
 .authSection {
   display: flex;
@@ -207,11 +208,11 @@ a {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 35rem;
-     background-color: #fff;
+    background-color: #fff;
     height: 30rem;
     border-radius: 5px;
     display: grid;
-    grid-template-rows: 15% 85%;
+    grid-template-rows: 15% 70% 15%;
     overflow: hidden;
   }
   &-Hedaer {
@@ -222,20 +223,89 @@ a {
     background-color: #5c5aeb;
   }
   &-ContentDetails {
-  
   }
   &-exitBtn {
     width: 3rem;
     height: 3rem;
   }
 }
-.tableHeader{
+.modal-Footer {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  display: grid;
+  grid-template-rows: 70% 30%;
+  &_row1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  &_row2 {
+    color: white;
+    background-color: blue;
+  }
+  &_btnShop {
+    width: 7rem;
+    height: 3rem;
+    border: none;
+    color: #2da30f;
+    position: relative;
+    text-align: center;
+    display: none;
+  }
+  &_btnIcon {
+    position: absolute;
+    top: 0.4rem;
+    right: 0;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid green;
+    border-radius: 50%;
+  }
+}
+.tableHeader {
   background-color: #5c5aeb;
 }
-table{
+table {
   width: 100%;
   border: 1px solid black;
 }
-th,td{
+th,
+td {
   padding: 0.5rem;
+}
+.btn-add-mines {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+.btnChangeQuantity {
+  width: 2rem;
+  border: none;
+  height: 2rem;
+}
+#showNotification {
+  position: absolute;
+  background-color: green;
+  color: #fff;
+  border-radius: 5px;
+  width: 13rem;
+  height: 2.5rem;
+  font-size: 16px;
+  right: 0;
+  transform: translate(-50%);
+  display: none;
+  text-align: center;
+  padding-top: 1rem;
+  top: 1rem;
+}
+#showNotification.show {
+  display: block;
+}
+#showNotification.error {
+  background-color: red;
 }

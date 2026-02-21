@@ -11,6 +11,7 @@
     <title>LibraryProjectInjs</title>
   </head>
   <body>
+    <div class="showNotification" id="showNotification"></div>
     <div id="modal" class="modal">
       <div class="modal-Content">
         <div class="modal-Hedaer">
@@ -21,28 +22,31 @@
           <table>
             <thead>
               <tr class="tableHeader">
-                <th>مجموع</th>
                 <th>عملیات</th>
+                <th>مجموع</th>
                 <th>تعداد</th>
                 <th>قیمت</th>
                 <th>نام</th>
                 <th>تصویر</th>
               </tr>
             </thead>
-            <tbody>
-              <tr class="row">
-                <th>cc</th>
-                <th>dc</th>
-                <th>dd</th>
-                <th>ddd</th>
-                <th>ddd</th>
-                <th>ddd</th>
-              </tr>
-            </tbody>
+            <tbody class="cartItemContainer"></tbody>
           </table>
+        </div>
+        <div class="modal-Footer">
+          <div class="modal-Footer_row1">
+            <button id="btnCartShopModal" class="modal-Footer_btnShop">
+              تکمیل سفارش <i class="modal-Footer_btnIcon fa-solid fa-check"></i>
+            </button>
+            <p id="totalCart"></p>
+          </div>
+          <div class="modal-Footer_row2">
+            <h3 id="loginRemainder">لطفا برای تکمیل سفارش به سایت وارد شوید</h3>
+          </div>
         </div>
       </div>
     </div>
+
     <!--header and search food-->
     <div class="header">
       <div class="header-loginLink">
@@ -58,15 +62,15 @@
         </div>
         <div id="authSection" class="authSection"></div>
       </div>
-      <div class="header-search">
+      <form class="header-search">
         <input
           class="header-search-input"
           type="text"
           placeholder="...جستجو کن تا زودتر پیدا کنی"
           id="searchElemnt"
         />
-        <button class="header-search-btn" id="searchBtn">جستجو</button>
-      </div>
+        <button type="submit" class="header-search-btn" id="searchBtn">جستجو</button>
+      </form>
       <div class="header-logo">
         <img
           id="snapfoodLogo"
@@ -74,7 +78,6 @@
           alt="snapfood logo"
         />
       </div>
-    
     </div>
 
     <div class="main">
@@ -157,6 +160,6 @@
     </div>
     <footer class="footer">footer</footer>
 
-    <script type="module" src="./app.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>
