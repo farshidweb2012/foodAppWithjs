@@ -69,7 +69,9 @@
           placeholder="...جستجو کن تا زودتر پیدا کنی"
           id="searchElemnt"
         />
-        <button type="submit" class="header-search-btn" id="searchBtn">جستجو</button>
+        <button type="submit" class="header-search-btn" id="searchBtn">
+          جستجو
+        </button>
       </form>
       <div class="header-logo">
         <img
@@ -89,15 +91,6 @@
             جستجو برا اساس ناحیه جغرافیای
           </h2>
           <ul class="countrylist">
-            <li class="chooseCountry">
-              <img
-                value="All"
-                class="countryImage"
-                src="./images/CountryFlags/allCountry.jpg"
-                alt=""
-              />
-              <span>همه کشورها</span>
-            </li>
             <li class="chooseCountry">
               <img
                 value="Italian"
@@ -156,8 +149,49 @@
         </div>
         <div id="cardContainer" class="cardContainer"></div>
       </div>
-      <div class="filterlist">filter</div>
+
+      <aside class="filterlist">
+        <div class="filterlist-filter">
+          <h2 style="width: 8rem; text-align: right">فیلترها</h2>
+          <div class="filterlist-row1">
+            <label for="filterByingredeiant"
+              ><h4>فیلتر بر اساس مواد اولیه</h4></label
+            >
+            <select id="filterByingredeiant">
+              <option selected value="">انتخاب مواد اولیه</option>
+              <option value="Chicken ">مرغ</option>
+              <option value="Beef">گوشت</option>
+              <option value="Rice">برنج</option>
+            </select>
+          </div>
+          <div class="filterlist-row2">
+            <label for="filterByCategory"
+              ><h4>غیلتر بر اساس دسته بندی</h4></label
+            >
+            <select id="filterByCategory">
+              <option default value="">دسته بندی</option>
+              <option value="Seafood">غذاهای دریایی</option>
+              <option value="Beef">غذاهای گوشتی</option>
+              <option value="Dessert">دسرها</option>
+              <option value="Lamb">گوشت بره</option>
+              <option value="Pasta">پاستا</option>
+              <option value="Pork">گوشت خوک</option>
+              <option value="Side">ساید</option>
+              <option value="Breakfast">صبحانه</option>
+              <option value="Vegan">وگان</option>
+              <option value="Starter">پیش غذا</option>
+              <option value="Vegetarian">سبزیجات</option>
+              <option value="Goat">گوشت بز</option>
+              <option value="Miscellaneous"></option>
+            </select>
+          </div>
+          <div class="filterlist-row3">
+            <button id="clearFilters">پاک کردن فیلترها</button>
+          </div>
+        </div>
+      </aside>
     </div>
+
     <footer class="footer">footer</footer>
 
     <script src="./app.js"></script>

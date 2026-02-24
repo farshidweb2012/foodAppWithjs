@@ -73,7 +73,7 @@ a {
 
 .main {
   display: grid;
-  grid-template-columns: 80% 20%;
+  grid-template-columns: 87% 13%;
   height: -moz-max-content;
   height: max-content;
   min-height: -moz-max-content;
@@ -90,13 +90,6 @@ a {
 .categoryBycountry {
   display: grid;
   grid-template-rows: 20% 80%;
-}
-
-.filterlist {
-  position: sticky;
-  width: 100%;
-  height: 40rem;
-  background-color: burlywood;
 }
 
 .cardContainer {
@@ -323,4 +316,56 @@ td {
 
 #showNotification.error {
   background-color: red;
+}
+
+.filterlist {
+  position: sticky;
+  width: 100%;
+  height: 40rem;
+  background-color: rgb(169, 240, 162);
+  padding: 1rem;
+}
+.filterlist-filter {
+  height: 25rem;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+.filterlist-row1 {
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+.filterlist-row2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: chartreuse;
+}
+.filterlist-row3 {
+  background-color: rgb(223, 171, 205);
+}
+
+select {
+  width: 9rem;
+  height: 2rem;
+  background-color: #bbb;
+  font-size: 0.9rem;
+}
+
+option {
+  background-color: #fff;
+}
+
+#clearFilters {
+  width: 9rem;
+  height: 2rem;
 }/*# sourceMappingURL=style.css.map */

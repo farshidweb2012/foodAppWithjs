@@ -1,7 +1,10 @@
 var foodList = [];
 let Foodlist;
 let cartItem = [];
-
+  const filterByingredeiant    =document.getElementById('filterByingredeiant')
+ const filterByCategory= document.getElementById("filterByCategory")
+const searchInput = document.querySelector(".header-search");
+const apiUrl = "https://www.themealdb.com/api/json/v1/1/";
 const cardContainer = document.getElementById("cardContainer");
 const cartCountEL = document.querySelector(".cartNumber");
 const Modal = document.querySelector(".modal");
@@ -100,7 +103,7 @@ function addToCart(food) {
 }
 ////////render data to dom
 function renderDataToDom(list) {
-  cardContainer.innerHTML=''
+  cardContainer.innerHTML = "";
   list.map((food, index) => {
     const card = document.createElement("div");
     const addBtn = document.createElement("button");
@@ -249,25 +252,75 @@ function convertNumberToPersian(number) {
   return number.toString().replace(/\d/g, (digit) => numbers[digit]);
 }
 
-// const allCountryCategory = Array.from(
-//   document.querySelectorAll(".countryImage"),
-// );
-// allCountryCategory.map((country) => {
-//   country.addEventListener("click", (e) => {
-//     if (country.getAttribute("value") === "All") {
-//       country.classList.add("selected-country");
-//     }
-//   });
-// });
-///////////////search food
-document.querySelector(".header-search").addEventListener("submit", (e) => {
-  e.preventDefault();
-  const searchQuery = document.getElementById("searchElemnt").value;
-  searchFoodInApi(searchQuery);
+const allCountryCategory = Array.from(
+  document.querySelectorAll(".countryImage"),
+);
+allCountryCategory.map((country) => {
+  country.addEventListener("click", (e) => {
+    const clikedIcon = e.target.getAttribute("value");
+    filterFoods("region", clikedIcon);
+  });
 });
 
+/////
+
+async function filterFoods(type, value) {
+  let url;
+  try {
+    switch (type) {
+      case "ingredient":
+        url = `${apiUrl}filter.php?i=${value}`;
+        break;
+      case "region":
+        url = `${apiUrl}filter.php?a=${value}`;
+        break;
+      case "category":
+        url = `${apiUrl}filter.php?c=${value}`;
+        break;
+
+      default:
+        throw new Error("نوع غذا یافت نشد");
+    }
+
+    const response = await fetch(url);
+    const data = await response.json();
+    let foodBySpecialRegion = data.meals.map((meal) => {
+      meal.price = Math.floor(Math.random() * (60 - 5 + 1)) + 5;
+      return meal;
+    });
+    renderDataToDom(foodBySpecialRegion);
+  } catch (error) {
+    console.log(error);
+  }
+}
+//////////////filter by
+ 
+  filterByingredeiant.addEventListener("change", (e) => {
+    console.log(e.target.value);
+    filterFoods("ingredient", e.target.value);
+  });
+////////filter Category
+
+filterByCategory.addEventListener("change", (e) => {
+    filterFoods("category", e.target.value);
+  });
+///////////////search food
+searchInput.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const searchQuery = document.getElementById("searchElemnt").value;
+  searchFoods(searchQuery);
+});
+
+
+document.getElementById('clearFilters').addEventListener('click',()=>{
+      filterByingredeiant.value=''
+       filterByCategory.value=''
+       searchInput.value='';
+       fetchData()
+})
+
 //////////////search function
-async function searchFoodInApi(inputValue) {
+async function searchFoods(inputValue) {
   try {
     const response = await fetch(
       `https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`,
@@ -277,12 +330,12 @@ async function searchFoodInApi(inputValue) {
       throw new Error("faild get data from server");
     }
     const data = await response.json();
-    const searchFoods=data.meals.map((food)=>{
-       food.price=Math.floor(Math.random() * (60 - 5 + 1)) + 5;
-       return food
-    })
+    const searchFoods = data.meals.map((food) => {
+      food.price = Math.floor(Math.random() * (60 - 5 + 1)) + 5;
+      return food;
+    });
     console.log(searchFoods);
-    renderDataToDom(searchFoods)
+    renderDataToDom(searchFoods);
   } catch (error) {
     console.log(error);
   }
